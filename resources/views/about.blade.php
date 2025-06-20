@@ -8,8 +8,8 @@
 </head>
 <body>
     <h1>Halaman About</h1>
-    <h3>Abdi Putra Zulkarnain</h3>
-    <p>mhdabdikc123@gmial.ocm</p>
+    <h3><?php echo $name; ?></h3>
+    <p><?php echo $email; ?></p>
     
 </body>
 </html>

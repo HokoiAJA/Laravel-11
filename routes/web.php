@@ -7,7 +7,10 @@ Route::get('/', function () {
 });
 
 Route::get('/about', function () {
-    return view('about');
+    return view('about', [
+        "name" => "Abdi Putra ZUlkarnain",
+        "email"=> "mhdabdikc123@gmail.com",
+    ]);
 });
 
 Route::get('/blog', function () {
