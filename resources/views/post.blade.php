@@ -2,10 +2,9 @@
 
 @section('container')
     <article>
-        <h2>Judul</h2>
-        <h5>By: Author</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
-
+        <h2>{{ $post['title'] }}</h2>
+        <h5>By: {{ $post['author'] }}</h5>
+        <p>{{ $post['body'] }}</p>
     </article>
-        <a href="/blog" class="d-block mt-3">Kembali ke daftar blog</a>
+    <a href="/blog" class="d-block mt-3">Kembali ke daftar blog</a>
 @endsection
