@@ -13,6 +13,7 @@ Route::get('/about', function () {
         "title" => "About",
         "name" => "Abdi Putra ZUlkarnain",
         "email"=> "mhdabdikc123@gmail.com",
+        "image" => "Hokoi.png"
     ]);
 });
 
