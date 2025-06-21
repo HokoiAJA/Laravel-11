@@ -6,5 +6,5 @@
         <h5>By: {{ $post['author'] }}</h5>
         <p>{{ $post['body'] }}</p>
     </article>
-    <a href="/blog" class="d-block mt-3">Kembali ke daftar blog</a>
+    <a href="/posts" class="d-block mt-3">Kembali ke daftar blog</a>
 @endsection
