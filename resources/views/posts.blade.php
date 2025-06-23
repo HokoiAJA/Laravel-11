@@ -7,7 +7,7 @@
             <h2>
                 <a href="/posts/{{ $post->slug }}" class="text-decoration-none">{{ $post->title }}</a>
             </h2>
-            <p>By. Sandhika Galih in <a href="/categories/{{ $post->category->slug }}" class="text-decoration-none">{{ $post->category->name }}</a>
+            <p>By. <a href="/categories/{{ $post->category->slug }}" class="text-decoration-none">{{ $post->category->name }}</a>
             </p>
             <p>{{ $post->excerpt }}</p>
             <a href="/posts/{{ $post->slug }}">Read more..</a>
