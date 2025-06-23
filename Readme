@@ -16,3 +16,4 @@ Eloquent ORM
 Membuat Model Post
 Blade Escape Character
 Mass Assignment
+Route Model Binding
