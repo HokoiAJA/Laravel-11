@@ -2,33 +2,10 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
-class Post
+class Post extends Model
 {
-    private static $blog_posts = [
-    [
-        "title" => "Judul Post Pertama",
-        "slug" => "judul-post-pertama",
-        "author" => "Abdi Putra Zulkarnain",
-        "body" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, cumque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, cumque."
-    ],
-    [
-        "title" => "Judul Post Kedua",
-        "slug" => "judul-post-kedua",
-        "author" => "Hooi Kian Hoo",
-        "body" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, cumque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, cumque."
-    ]
-    ];
-
-    public static function all()
-    {
-        return collect(self::$blog_posts);
-    }
-
-    public static function find($slug)
-    {
-        $posts = static::all();
-
-        return $posts->firstWhere('slug', $slug);
-    }
+    
 }
