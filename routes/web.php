@@ -37,7 +37,7 @@ Route::get('/categories', function () {
     ]);
 });
 
-route::get('/login', [LoginController::class, 'index']);
+route::get('/login', [LoginController::class, 'index'])->middleware('guest');
 route::post('/login', [LoginController::class, 'authenticate']);
 
 route::get('/register', [RegisterController::class, 'index']);
