@@ -37,4 +37,6 @@ Route::get('/categories', function () {
 });
 
 route::get('/login', [LoginController::class, 'index'])->name('login');
-route::get('/register', [RegisterController::class, 'index'])->name('register');
+
+route::get('/register', [RegisterController::class, 'index']);
+route::post('/register', [RegisterController::class, 'store']);
