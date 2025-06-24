@@ -2,9 +2,8 @@
 
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
-use App\Models\Post;
 use App\Models\Category;
-use App\Models\User;
+use App\Http\Controllers\LoginController;
 
 Route::get('/', function () {
     return view('home', [
@@ -35,3 +34,5 @@ Route::get('/categories', function () {
         'categories' => Category::all()
     ]);
 });
+
+route::get('/login', [LoginController::class, 'index'])->name('login');
