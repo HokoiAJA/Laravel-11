@@ -37,11 +37,11 @@ Route::get('/categories', function () {
     ]);
 });
 
-route::get('/login', [LoginController::class, 'index'])->middleware('guest');
+route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 route::post('/login', [LoginController::class, 'authenticate']);
 route::post('/logout', [LoginController::class, 'logout']);
 
-route::get('/register', [RegisterController::class, 'index']);
+route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 route::post('/register', [RegisterController::class, 'store']);
 
-route::get('/dashboard', [DashboardController::class, 'index']);
+route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
