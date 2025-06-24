@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
@@ -15,21 +18,10 @@ class LoginController extends Controller
     }
     public function authenticate(Request $request)
     {
-        // Validasi input
-        $credentials = $request->validate([
+        $request->validate([
             'email' => 'required|email',
-            'password' => 'required|min:6',
+            'password' => 'required'
         ]);
-
-        // Coba autentikasi
-        if (auth()->attempt($credentials)) {
-            // Redirect ke halaman yang diinginkan setelah login sukses
-            return redirect()->intended('/')->with('success', 'Login berhasil!');
-        }
-
-        // Jika gagal, kembali ke halaman login dengan pesan error
-        return back()->withErrors([
-            'email' => 'Email atau password salah.',
-        ]);
+        dd('Login Berhasil');
     }
 }
