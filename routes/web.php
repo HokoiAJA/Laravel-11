@@ -4,6 +4,7 @@ use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Category;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
 
 Route::get('/', function () {
     return view('home', [
@@ -36,3 +37,4 @@ Route::get('/categories', function () {
 });
 
 route::get('/login', [LoginController::class, 'index'])->name('login');
+route::get('/register', [RegisterController::class, 'index'])->name('register');
