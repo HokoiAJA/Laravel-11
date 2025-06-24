@@ -30,3 +30,4 @@ Menampilkan data Post dari yang paling baru
 Menampilkan Post berdasarkan Author
 Memperbaiki halaman category
 Eager loading
+Lazy eager loading
