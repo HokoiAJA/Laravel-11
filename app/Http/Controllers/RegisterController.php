@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class RegisterController extends Controller
 {
@@ -24,6 +25,11 @@ class RegisterController extends Controller
             'email' => 'required|email:dns|unique:users',
             'password' => 'required|min:5|max:255'
         ]);
+
+        $validateData['password'] = Hash::make($validateData['password']);
+
         User::create($validateData);
+
+        return redirect('/login');
     }
 }
