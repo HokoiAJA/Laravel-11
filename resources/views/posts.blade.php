@@ -9,7 +9,8 @@
                 <h3 class="card-title"><a href="/$posts/{{ $posts[0]->slug }}" class="text-decoration-none text-dark">{{ $posts[0]->title}}</a></h3>
                 <p>
                     <small class="text-muted"> 
-                        By. <a href="/authors/{{ $posts[0]->author->username }}" class="text-decoration-none">{{ $posts[0]->author->name }}</a> in <a href="/categories/{{ $posts[0]->category->slug }}" class="text-decoration-none">{{ $posts[0]->category->name }}</a> {{ $posts[0]->created_at->diffForHumans() }}
+                        By. <a href="/authors/{{ $posts[0]->author->username }}" class="text-decoration-none">{{ $posts[0]->author->name }}</a> in 
+                        <a href="/categories/{{ $posts[0]->category->slug }}" class="text-decoration-none">{{ $posts[0]->category->name }}</a> {{ $posts[0]->created_at->diffForHumans() }}
                     </small>
                 </p>
                 <p class="card-text">{{ $posts[0]->excerpt }}</p>
@@ -24,6 +25,7 @@
             @foreach ($posts->skip(1) as $post)
                 <div class="col-md-4">
                     <div class="card">
+                    <div class="position-absolute px-3 py-2" style="background-color: rgba(0, 0, 0, 0.7)"><a href="/categories/{{ $post->category->slug }}" class="text-white text-decoration-none">{{ $post->category->name }}</a></div>
                         <img src="https://picsum.photos/500/400?random={{ $post->category->name }}" class="card-img-top" alt="{{ $post->category->name }}">
                         <div class="card-body">
                             <h5 class="card-title">{{ $post->title }}</h5>
