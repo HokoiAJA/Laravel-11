@@ -58,3 +58,4 @@ Membuat DashboardController
 Menerapkan middleware auth
 Membuat logout
 Memperbaiki akses halaman dashboard & Named Route
+Menghapus controller dashboard

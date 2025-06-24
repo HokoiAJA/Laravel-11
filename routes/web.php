@@ -44,4 +44,5 @@ route::post('/logout', [LoginController::class, 'logout']);
 route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 route::post('/register', [RegisterController::class, 'store']);
 
-route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
+route::get('/dashboard', function () {
+    return view('dashboard.index'); })->middleware('auth');
