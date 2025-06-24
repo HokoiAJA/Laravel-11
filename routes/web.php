@@ -39,6 +39,7 @@ Route::get('/categories', function () {
 
 route::get('/login', [LoginController::class, 'index'])->middleware('guest');
 route::post('/login', [LoginController::class, 'authenticate']);
+route::post('/logout', [LoginController::class, 'logout']);
 
 route::get('/register', [RegisterController::class, 'index']);
 route::post('/register', [RegisterController::class, 'store']);

@@ -56,3 +56,4 @@ Membuat route & method login
 Otentikasi login
 Membuat DashboardController
 Menerapkan middleware auth
+Membuat logout

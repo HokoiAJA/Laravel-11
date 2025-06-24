@@ -33,4 +33,13 @@ class LoginController extends Controller
 
         return back()->with('loginError', 'Login failed! Please check your credentials.');
     }
+
+    public function logout()
+    {
+        Auth::logout();
+        request()->session()->invalidate();
+        request()->session()->regenerateToken();
+
+        return redirect('/');
+    }
 }
