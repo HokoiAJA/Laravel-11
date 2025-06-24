@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 
+
 class RegisterController extends Controller
 {
     public function index()
@@ -30,6 +31,8 @@ class RegisterController extends Controller
 
         User::create($validateData);
 
-        return redirect('/login');
+        // session()->flash('success', 'Registration successful! Please login');
+
+        return redirect('/login')->with('success', 'Registration successful! Please login');
     }
 }
