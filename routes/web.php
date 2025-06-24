@@ -9,12 +9,14 @@ use App\Models\User;
 Route::get('/', function () {
     return view('home', [
         "title" => "Home",
+        "active" => "home",
     ]);
 });
 
 Route::get('/about', function () {
     return view('about', [
         "title" => "About",
+        "active" => "about",
         "name" => "Abdi Putra ZUlkarnain",
         "email" => "mhdabdikc123@gmail.com",
         "image" => "Hokoi.png"
