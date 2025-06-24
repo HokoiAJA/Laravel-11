@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Category;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\DashboardController;
 
 Route::get('/', function () {
     return view('home', [
@@ -41,3 +42,5 @@ route::post('/login', [LoginController::class, 'authenticate']);
 
 route::get('/register', [RegisterController::class, 'index']);
 route::post('/register', [RegisterController::class, 'store']);
+
+route::get('/dashboard', [DashboardController::class, 'index']);
