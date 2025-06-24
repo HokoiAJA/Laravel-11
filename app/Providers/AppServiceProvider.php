@@ -2,8 +2,11 @@
 
 namespace App\Providers;
 
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\schema;
+use Illuminate\Support\Facades\View;
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -11,7 +14,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        
+
     }
 
     /**
@@ -20,5 +23,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         schema::defaultStringLength(191); // Untuk menghindari error pada MySQL 5.7 ke bawah
+        Paginator::useBootstrapFive(); // Menggunakan Bootstrap 5 untuk pagination
     }
 }
