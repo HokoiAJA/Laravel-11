@@ -70,3 +70,4 @@ Membuat tombol create post
 Membuat view create
 Membuat slug otomatis menggunakan Sluggable
 Membuat combo box Category
+Membuat editor untuk body menggunakan Trix Editor
