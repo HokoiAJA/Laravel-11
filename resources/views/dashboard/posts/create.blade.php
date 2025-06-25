@@ -15,6 +15,20 @@
                 <label for="slug" class="form-label">Slug</label>
                 <input type="text" class="form-control" id="slug" name="slug">
             </div>
+            <div class="mb-3">
+                <label for="category" class="form-label">Category</label>
+                <select class="form-select" name="category_id" id="category">
+                    @foreach ($categories as $category)
+                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="body" class="form-label">Body</label>
+                <input id="body" type="hidden" name="body">
+                <trix-editor input="body"></trix-editor>
+
+            </div>
             <button type="submit" class="btn btn-primary">Create Post</button>
         </form>
     </div>
