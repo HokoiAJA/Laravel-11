@@ -6,6 +6,7 @@ use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+
 class DashboardPostController extends Controller
 {
     /**
@@ -13,7 +14,9 @@ class DashboardPostController extends Controller
      */
     public function index()
     {
-        return view('dashboard.posts.index');
+        return view('dashboard.posts.index', [
+            'posts' => Post::where('user_id', Auth::user()->id)->get()
+        ]);
     }
 
     /**
