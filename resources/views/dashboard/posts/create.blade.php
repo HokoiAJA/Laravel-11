@@ -5,12 +5,12 @@
         <h1 class="h2">Create new post</h1>
     </div>
     <div class="col-lg-8">
-        <form method="post" action="/dashboard/posts" class="mb-5">
+        <form method="post" action="/dashboard/posts" class="mb-5" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
                 <label for="title" class="form-label">Title</label>
-                <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title"
-                    required autofocus value="{{ old('title') }}">
+                <input type="text" class="form-control @error('title') is-invalid @enderror" id="title"
+                    name="title" required autofocus value="{{ old('title') }}">
                 @error('title')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -38,6 +38,10 @@
                         @endif
                     @endforeach
                 </select>
+            </div>
+            <div class="mb-3">
+                <label for="image" class="form-label">Post Image</label>
+                <input class="form-control" type="file" id="image" name="image">
             </div>
             <div class="mb-3">
                 <label for="body" class="form-label">Body</label>
