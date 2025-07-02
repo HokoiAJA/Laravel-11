@@ -123,5 +123,9 @@ return [
         'driver' => env('APP_MAINTENANCE_DRIVER', 'file'),
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
+    'aliases' => [
+    // ...middleware lain...
+    'admin' => App\Http\Middleware\IsAdmin::class,
+],
 
 ];
